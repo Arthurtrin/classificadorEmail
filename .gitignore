@@ -21,3 +21,6 @@ env/
 
 # MacOS
 .DS_Store
+
+# Dados sensiveis
+.env
