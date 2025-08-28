@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classificação Inteligente de Emails</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    body {
+      background: #f8f9fa;
+    }
+    .card {
+      border-radius: 1rem;
+    }
+    .form-section {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+      padding: 2rem;
+    }
+    .result-card {
+      border-left: 5px solid #0d6efd;
+    }
+  </style>
+</head>
+<body>
+
+{% if messages %}
+  {% for message in messages %}
+    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header {% if message.tags == 'error' %}bg-danger text-white{% else %}bg-success text-white{% endif %}">
+            <h5 class="modal-title" id="messageModalLabel">
+              {% if message.tags == 'error' %}Erro{% else %}Sucesso{% endif %}
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            {{ message }}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const modal = new bootstrap.Modal(document.getElementById('messageModal'));
+        modal.show();
+      });
+    </script>
+  {% endfor %}
+{% endif %}
+
+  <div class="container py-5">
+    <h1 class="text-center mb-4">
+      <i class="fa-solid fa-envelope-open-text text-primary"></i>
+      Classificador de Emails com IA
+    </h1>
+
+    <!-- Formulário -->
+    <div class="form-section mb-4">
+      <h5 class="mb-3"><i class="fa-solid fa-upload"></i> Envie seu email</h5>
+
+      <form method="post" action="{% url 'pegaremail' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="emailText" class="form-label">Digite ou cole o email:</label>
+          <textarea id="emailText" name="emailText" class="form-control" rows="5" placeholder="Cole aqui o conteúdo do email..."></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="arquivo" class="form-label">Ou envie um arquivo (.txt / .pdf):</label>
+          <input name="arquivo" class="form-control" type="file" id="arquivo">
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">
+          <i class="fa-solid fa-robot"></i> Processar Email
+        </button>
+      </form>
+    </div>
+
+    <!-- Resultados simulados -->
+    <div class="card p-4 shadow-sm result-card">
+      <h5><i class="fa-solid fa-envelope-circle-check text-success"></i> Categoria:</h5>
+      <p><span class="badge bg-success">
+        {% if categoria %}
+        {{ categoria }}
+        {% else %} 
+        Sem categoria Definida ainda. 
+        {% endif %}
+      </span></p>
+        
+      <h5><i class="fa-solid fa-reply text-primary"></i> Resposta Sugerida:</h5>
+      <p>{% if resposta %}
+        {{ resposta }}
+        {% else %} 
+        Sem Resposta Definida ainda. 
+        {% endif %}</p>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
