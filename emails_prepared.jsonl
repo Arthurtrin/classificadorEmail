@@ -1,0 +1,77 @@
+{"prompt":"Email: Olá, gostaria de saber o status da minha solicitação aberta ontem.\nClassifique e responda:\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Sua solicitação está em andamento e nossa equipe dará retorno em breve. END"}
+{"prompt":"Email: Feliz Natal para toda a equipe!\nClassifique e responda:\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Muito obrigado pela mensagem! Desejamos a você também um ótimo Natal. END"}
+{"prompt":"Email: Preciso de ajuda para acessar o sistema, estou com erro de login.\nClassifique e responda:\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Entendi, por favor tente redefinir sua senha. Se o problema persistir, entraremos em contato. END"}
+{"prompt":"Email: Obrigado pela sua ajuda.\nClassifique e responda:\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Nós que agradecemos, estamos sempre à disposição. END"}
+{"prompt":"Email: Bom dia, poderiam me enviar a fatura do mês de abril?\nClassifique e responda:\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Claro! Vamos encaminhar a fatura de abril para o seu e-mail ainda hoje. END"}
+{"prompt":"Email: Prezados, segue em anexo o documento solicitado.\nClassifique e responda:\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Documento recebido com sucesso, muito obrigado pelo envio! END"}
+{"prompt":"Email: Vocês poderiam atualizar o status da minha abertura de conta?\nClassifique e responda:\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Sua solicitação de abertura de conta está em análise, daremos retorno em breve. END"}
+{"prompt":"Email: Bom trabalho a todos pelo esforço neste mês.\nClassifique e responda:\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Agradecemos pela mensagem de reconhecimento, é muito importante para nós! END"}
+{"prompt":"Email: Estou com dificuldades para anexar arquivos no portal, como devo proceder?\nClassifique e responda:\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Recomendamos limpar o cache do navegador e tentar novamente. Caso persista, nossa equipe dará suporte técnico. END"}
+{"prompt":"Email: Agradeço pela rápida resposta no meu chamado.\nClassifique e responda:\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Nós que agradecemos, sempre buscamos agilizar o atendimento. END"}
+{"prompt":"Email: Gostaria de alterar o endereço de entrega do meu pedido.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Endereço atualizado com sucesso. Obrigado por nos informar! END"}
+{"prompt":"Email: Que bom que conseguimos finalizar a apresentação!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Parabéns a todos pelo esforço! Ficamos felizes com o resultado. END"}
+{"prompt":"Email: Estou com dificuldades para acessar minha conta.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Entendido, por favor tente redefinir sua senha. Se continuar com problemas, nossa equipe irá ajudar. END"}
+{"prompt":"Email: Excelente trabalho no último projeto!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Muito obrigado! É sempre bom receber feedback positivo. END"}
+{"prompt":"Email: Poderiam me enviar a fatura do mês passado?\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Claro! Encaminharemos a fatura para seu e-mail ainda hoje. END"}
+{"prompt":"Email: Feliz Ano Novo para toda a equipe!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Muito obrigado! Desejamos um excelente ano para você também. END"}
+{"prompt":"Email: Preciso alterar os dados do meu contrato.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Alteração registrada. Você receberá a confirmação por e-mail em breve. END"}
+{"prompt":"Email: Parabéns a todos pelo esforço do trimestre!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Obrigado pelo reconhecimento! Ele motiva nossa equipe a continuar se dedicando. END"}
+{"prompt":"Email: Meu pedido chegou com defeito, como faço para trocar?\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Lamentamos pelo ocorrido. Por favor, envie fotos do produto para iniciarmos a troca ou reembolso. END"}
+{"prompt":"Email: Ótimo evento ontem!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Ficamos felizes que tenha gostado! Obrigado pelo feedback. END"}
+{"prompt":"Email: Gostaria de suporte técnico para meu computador.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Recebido, nossa equipe entrará em contato para prestar suporte técnico. END"}
+{"prompt":"Email: Quero cancelar minha assinatura mensal.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Cancelamento recebido. Sua assinatura será encerrada conforme solicitado. END"}
+{"prompt":"Email: Ótimo trabalho na apresentação de hoje!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Muito obrigado! Ficamos felizes com seu reconhecimento. END"}
+{"prompt":"Email: Preciso de ajuda para redefinir minha senha.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Entendido, envie o e-mail vinculado à conta e nossa equipe ajudará a redefinir a senha. END"}
+{"prompt":"Email: Parabéns pelo lançamento do novo produto!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Muito obrigado! Estamos felizes com o seu feedback positivo. END"}
+{"prompt":"Email: Preciso alterar a data de entrega do meu pedido.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Alteração registrada, a nova data de entrega será confirmada por e-mail. END"}
+{"prompt":"Email: Gostaria de agradecer pelo atendimento rápido.\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Nós que agradecemos! É um prazer atender você com agilidade. END"}
+{"prompt":"Email: Meu produto chegou danificado, preciso de troca.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Lamentamos o ocorrido. Por favor, envie fotos do produto para iniciarmos a troca. END"}
+{"prompt":"Email: Bom dia, gostaria de parabenizar a equipe pelo projeto.\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Agradecemos sua mensagem! É muito motivador receber feedback positivo. END"}
+{"prompt":"Email: Não consigo acessar meu histórico de pedidos.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Entendido, nossa equipe irá ajudá-lo a acessar o histórico de pedidos. END"}
+{"prompt":"Email: Muito obrigado pelo suporte nesta semana.\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Nós que agradecemos! Estamos sempre à disposição. END"}
+{"prompt":"Email: Preciso enviar documentos adicionais para análise.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Documentos recebidos, nossa equipe dará prosseguimento à análise. END"}
+{"prompt":"Email: Parabéns pelo excelente atendimento da equipe.\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Muito obrigado! Ficamos felizes que tenha apreciado nosso atendimento. END"}
+{"prompt":"Email: Quero atualizar meus dados de cobrança.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Dados de cobrança atualizados com sucesso. Obrigado por nos informar. END"}
+{"prompt":"Email: Gostaria de agradecer pelo rápido atendimento.\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Nós que agradecemos! Sempre buscamos responder com agilidade. END"}
+{"prompt":"Email: Meu pedido não chegou no prazo, como proceder?\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Lamentamos o atraso. Nossa equipe verificará o status e retornará com uma solução. END"}
+{"prompt":"Email: Excelente iniciativa no projeto apresentado!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Muito obrigado! Ficamos felizes com seu reconhecimento. END"}
+{"prompt":"Email: Quero alterar a forma de pagamento da minha assinatura.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Alteração realizada com sucesso. Você receberá a confirmação por e-mail. END"}
+{"prompt":"Email: Agradeço a equipe pelo excelente suporte.\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Nós que agradecemos! É sempre gratificante receber feedback positivo. END"}
+{"prompt":"Email: Meu produto chegou errado, como posso trocar?\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Lamentamos o ocorrido. Por favor, envie fotos do produto para iniciarmos a troca. END"}
+{"prompt":"Email: Ótimo evento realizado ontem!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Ficamos felizes que tenha gostado! Obrigado pelo feedback. END"}
+{"prompt":"Email: Preciso que atualizem meu cadastro de endereço.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Cadastro atualizado com sucesso. Obrigado por nos informar. END"}
+{"prompt":"Email: Agradeço pela atenção e dedicação da equipe.\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Nós que agradecemos! É um prazer atendê-lo. END"}
+{"prompt":"Email: Quero cancelar minha reunião agendada.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Cancelamento recebido. Sua reunião foi removida da agenda. END"}
+{"prompt":"Email: Que bom que todos participaram da reunião!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Sim! Foi ótimo contar com a participação de todos. END"}
+{"prompt":"Email: Quero atualizar meu cadastro de telefone.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Telefone atualizado com sucesso. Obrigado por nos informar! END"}
+{"prompt":"Email: Parabéns pelo esforço da equipe no último evento!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Agradecemos! O reconhecimento motiva todos a se dedicarem cada vez mais. END"}
+{"prompt":"Email: Meu acesso à plataforma expirou, podem reativar?\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Seu acesso foi reativado com sucesso. Verifique se consegue entrar normalmente. END"}
+{"prompt":"Email: Ótimo trabalho de todos na última campanha!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Muito obrigado! Estamos felizes com o resultado alcançado. END"}
+{"prompt":"Email: Gostaria de solicitar reembolso da compra.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Recebemos sua solicitação de reembolso e entraremos em contato com os próximos passos. END"}
+{"prompt":"Email: Excelente apresentação na reunião de hoje!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Muito obrigado! Ficamos felizes que tenha gostado da apresentação. END"}
+{"prompt":"Email: Quero atualizar meu endereço de cobrança.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Endereço de cobrança atualizado com sucesso. END"}
+{"prompt":"Email: Meu pedido não chegou ainda, podem verificar?\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Verificamos o status do seu pedido e ele está a caminho. Entraremos em contato com atualizações. END"}
+{"prompt":"Email: Bom trabalho na última entrega!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Obrigado! Ficamos felizes que tenha gostado da entrega. END"}
+{"prompt":"Email: Preciso de ajuda para redefinir minha senha.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Enviamos instruções para redefinir sua senha. Caso não receba, avise-nos. END"}
+{"prompt":"Email: Parabéns a toda a equipe pelo excelente desempenho!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Muito obrigado! O reconhecimento é sempre motivador para a equipe. END"}
+{"prompt":"Email: Meu cadastro está incorreto, preciso atualizar.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Cadastro atualizado com sucesso. Obrigado por nos informar! END"}
+{"prompt":"Email: Que bom que conseguimos concluir o projeto antes do prazo!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Parabéns a todos pelo esforço! É ótimo ver os resultados. END"}
+{"prompt":"Email: Preciso alterar minha forma de pagamento.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Forma de pagamento atualizada. Em breve você receberá a confirmação por e-mail. END"}
+{"prompt":"Email: Ótimo evento ontem!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Ficamos felizes que tenha gostado do evento! END"}
+{"prompt":"Email: Preciso de suporte técnico para meu sistema.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Recebido, nossa equipe entrará em contato para prestar suporte técnico. END"}
+{"prompt":"Email: Meu pedido chegou incompleto.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Lamentamos o ocorrido. Vamos providenciar o envio do item que faltou imediatamente. END"}
+{"prompt":"Email: Parabéns pelo excelente atendimento!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Agradecemos pelo reconhecimento! Estamos sempre à disposição. END"}
+{"prompt":"Email: Preciso atualizar meu endereço de entrega.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Endereço atualizado com sucesso. Obrigado por nos informar! END"}
+{"prompt":"Email: Meu acesso ao sistema foi bloqueado.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Seu acesso foi desbloqueado. Por favor, tente entrar novamente e nos avise se houver problemas. END"}
+{"prompt":"Email: Bom final de semana para todos!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Obrigado! Desejamos um ótimo final de semana para você também. END"}
+{"prompt":"Email: Meu contrato precisa ser atualizado.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Atualização registrada. Você receberá a confirmação por e-mail em breve. END"}
+{"prompt":"Email: Que bom que todos participaram do treinamento!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Sim! Foi ótimo contar com a participação de todos. END"}
+{"prompt":"Email: Quero alterar a forma de pagamento do meu pedido.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Forma de pagamento alterada com sucesso. Você receberá a confirmação por e-mail. END"}
+{"prompt":"Email: Ótimo trabalho de todos no projeto recente!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Muito obrigado! É gratificante ver o resultado do nosso esforço. END"}
+{"prompt":"Email: Preciso cancelar meu pedido.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Recebemos sua solicitação de cancelamento e processaremos em breve. END"}
+{"prompt":"Email: Excelente apresentação de todos na reunião!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Muito obrigado! Ficamos felizes que tenham gostado da apresentação. END"}
+{"prompt":"Email: Meu endereço de cobrança precisa ser atualizado.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Endereço de cobrança atualizado com sucesso. END"}
+{"prompt":"Email: Que bom que a campanha foi bem-sucedida!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Sim! Ficamos muito felizes com o resultado da campanha. END"}
+{"prompt":"Email: Meu pedido foi entregue corretamente, obrigado!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Que bom que tudo chegou corretamente! Estamos à disposição. END"}
+{"prompt":"Email: Preciso de ajuda para anexar documentos no sistema.\n\n###\n\n","completion":" Categoria: Produtivo\nResposta: Recomendamos limpar o cache do navegador e tentar novamente. Caso persista, nossa equipe dará suporte técnico. END"}
+{"prompt":"Email: Bom trabalho a todos neste mês!\n\n###\n\n","completion":" Categoria: Improdutivo\nResposta: Agradecemos pelo reconhecimento! É muito importante para a equipe. END"}

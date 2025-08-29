@@ -64,7 +64,7 @@ def pegaremail(request):
         
         textoPrePro = preprocessar(conteudo) # PREPROCESSAR O TEXTO (SENDO TEXTO OU PDF/TXT)
 
-        textoResposta  = classificaEmail(textoPrePro)
+        textoResposta  = classificarEmail(textoPrePro)
         print(textoResposta)
         dados = separaTexto(textoResposta)
 
@@ -92,7 +92,7 @@ def separaTexto(texto_resposta):
             }
 
 
-def classificaEmail(email_texto):
+def classificarEmail(email_texto):
     prompt = f"""
     Analise o seguinte email e:
     1. Classifique como 'Produtivo' ou 'Improdutivo'.
@@ -110,3 +110,14 @@ def classificaEmail(email_texto):
     )
     
     return resposta.choices[0].message.content
+
+
+
+def classificar_email(email):
+    resposta = openai.chat.completions.create(
+        model="ft:gpt-4o-mini-turbo-xxxxx",  # seu modelo fine-tunado
+        messages=[{"role": "user", "content": f"Email: {email}\nClassifique e responda:"}]
+    )
+    return resposta.choices[0].message.content
+
+print(classificar_email("Oi, preciso de ajuda para acessar o sistema."))
