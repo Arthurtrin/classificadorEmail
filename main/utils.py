@@ -86,8 +86,6 @@ class Email:
 
     # remoção de stop words, lemmatização, etc.
     
-
-    
     def preprocessar(self):
         # Carregar modelo em português do spaCy (baixar antes com: python -m spacy download pt_core_news_sm)
         nlp = spacy.load("pt_core_news_sm")

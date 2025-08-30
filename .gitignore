@@ -24,5 +24,3 @@ env/
 
 # Dados sensiveis
 .env
-modelo_email.pkl
-vectorizer.pkl
