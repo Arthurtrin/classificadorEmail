@@ -24,10 +24,6 @@ Funções e classes principais:
         * Exception genérica: captura qualquer outro erro inesperado.
     - Renderiza a página principal com os dados processados ou mensagens de erro.
 
-2. erro(request, texto):
-    - Exibe uma mensagem de erro para o usuário usando o framework de mensagens do Django.
-    - Redireciona para a página principal ('home') após exibir a mensagem.
-
 Dependências:
 - Django: render, redirect, messages
 - Utils: Email, Arquivo
@@ -36,9 +32,10 @@ Dependências:
 
 def home(request):
     if request.method == "POST":
-
+        
         if request.FILES.get("arquivo") and request.POST.get('emailText'):
-            erro(request, 'Decida o formato a ser submetido (Arquivo ou Texto).')
+            messages.error(request, 'Decida o formato a ser submetido (Arquivo ou Texto).')
+            return redirect('home')
         
         elif request.POST.get('emailText'):
             emailTexto = Email(request.POST.get('emailText'), "")
@@ -47,25 +44,25 @@ def home(request):
             arquivo = Arquivo(request.FILES["arquivo"])
             
             if not arquivo.validaArquivo():
-                erro(request, 'Formato de arquivo não suportado, apenas .pdf ou .txt')
-            
+                messages.error(request, 'Formato de arquivo não suportado, apenas .pdf ou .txt')
+                return redirect('home')
+     
             arquivo.extrairConteudoArquivo() 
             emailTexto = Email(arquivo.arquivo, "")
+            emailTexto.preprocessar()
         else:
-            erro(request, 'Envie o email por texto ou por arquivo')
+            messages.error(request, 'Envie o email por texto ou por arquivo')
+            return redirect('home')
         
-        emailTexto.preprocessar()
-
         try:
             dados = emailTexto.responderEmail()
         except RateLimitError:
-            erro(request, 'Limite de requisições atingido. Tente novamente mais tarde.')
+            messages.error(request, 'Limite de requisições atingido. Tente novamente mais tarde.')
+            return redirect('home')
         except Exception as e:
-            erro(request, 'Ocorreu um erro inesperado: {e}.')
+            messages.error(request, 'Ocorreu um erro inesperado: {e}.')
+            return redirect('home')
             
         return render(request, 'main/index.html', dados)
     return render(request, 'main/index.html')
 
-def erro(request, texto):
-    messages.error(request, texto)
-    return redirect('home')

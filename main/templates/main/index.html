@@ -32,11 +32,11 @@
 
 {% if messages %}
   {% for message in messages %}
-    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+    <div class="modal fade" id="messageModal{{ forloop.counter }}" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header {% if message.tags == 'error' %}bg-danger text-white{% else %}bg-success text-white{% endif %}">
-            <h5 class="modal-title" id="messageModalLabel">
+            <h5 class="modal-title">
               {% if message.tags == 'error' %}Erro{% else %}Sucesso{% endif %}
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
@@ -53,8 +53,17 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        const modal = new bootstrap.Modal(document.getElementById('messageModal'));
+        const modalEl = document.getElementById('messageModal{{ forloop.counter }}');
+        const modal = new bootstrap.Modal(modalEl, {
+          backdrop: true, // permite clicar fora para fechar
+          keyboard: true  // permite ESC
+        });
         modal.show();
+
+        // Remove do DOM quando fechado, para evitar tela travada
+        modalEl.addEventListener('hidden.bs.modal', function () {
+          modalEl.remove();
+        });
       });
     </script>
   {% endfor %}
