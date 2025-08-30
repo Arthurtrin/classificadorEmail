@@ -1,123 +1,71 @@
 from django.shortcuts import render, redirect
-import os
-from django.conf import settings
-import pdfplumber
-import re
-from nltk.corpus import stopwords
-import nltk
-from unidecode import unidecode
 from django.contrib import messages
-from django.conf import settings
-import openai
+from .utils import Email, Arquivo
+from openai import RateLimitError
 
-# Pega a chave diretamente do settings
-openai.api_key = settings.OPENAI_API_KEY
+"""
+Arquivo de views do Django para lidar com submissão de emails e arquivos.
 
-def extrairConteudoArquivo(arquivo):
-    if arquivo.name.endswith(".txt"):
-        return arquivo.read().decode("utf-8")
+Contém a lógica para receber emails enviados pelo usuário, seja por texto direto
+ou por arquivo (.txt ou .pdf), processar o conteúdo, classificar o email usando
+modelo pré-treinado e gerar uma resposta automática com a API OpenAI.
 
-    conteudoArq = ""
-    with pdfplumber.open(arquivo) as pdf:
-        for pagina in pdf.pages:
-            conteudoArq += pagina.extract_text() + "\n"
-    return conteudoArq
+Funções e classes principais:
 
-def validaArquivo(arquivo):
-    return arquivo.name.lower().endswith((".txt", ".pdf"))
+1. home(request):
+    - Método: POST
+    - Recebe email ou arquivo do usuário.
+    - Valida se apenas um tipo de entrada foi enviado.
+    - Para arquivos, valida a extensão e extrai o conteúdo.
+    - Preprocessa o texto (remoção de stopwords, normalização, etc.).
+    - Chama o método 'responderEmail' da classe Email para gerar categoria e resposta.
+    - Tratamento de erros:
+        * RateLimitError: limite de requisições da OpenAI atingido.
+        * Exception genérica: captura qualquer outro erro inesperado.
+    - Renderiza a página principal com os dados processados ou mensagens de erro.
 
-# remoção de stop words, stemming/lemmatização, etc.
-def preprocessar(texto):
-    texto = texto.lower()
-    texto = unidecode(texto)
-    texto = re.sub(r"[^a-zA-Z0-9\s]", "", texto)
-    try:
-        stop_words = set(stopwords.words("portuguese"))
-    except LookupError:
-        nltk.download('stopwords')
-        stop_words = set(stopwords.words("portuguese"))
+2. erro(request, texto):
+    - Exibe uma mensagem de erro para o usuário usando o framework de mensagens do Django.
+    - Redireciona para a página principal ('home') após exibir a mensagem.
 
-    texto = [p for p in texto.split() if p not in stop_words]
-    return " ".join(texto)
+Dependências:
+- Django: render, redirect, messages
+- Utils: Email, Arquivo
+- OpenAI: RateLimitError
+"""
 
-def pegaremail(request):
+def home(request):
     if request.method == "POST":
 
         if request.FILES.get("arquivo") and request.POST.get('emailText'):
-            messages.error(request, 'Decida o formato a ser submetido (Arquivo ou Texto).')
-            return redirect('pegaremail')
+            erro(request, 'Decida o formato a ser submetido (Arquivo ou Texto).')
         
         elif request.POST.get('emailText'):
-            conteudo = request.POST.get('emailText')
+            emailTexto = Email(request.POST.get('emailText'), "")
 
         elif request.FILES.get("arquivo"):
-            arquivo = request.FILES["arquivo"]
-
-            if not validaArquivo(arquivo):
-                messages.error(request, 'Formato de arquivo não suportado, apenas PDF ou txt.')
-                return redirect('pegaremail')
-            conteudo = extrairConteudoArquivo(arquivo) # EXTRAIR O CONTEUDO DO ARQUIVO
-        
+            arquivo = Arquivo(request.FILES["arquivo"])
+            
+            if not arquivo.validaArquivo():
+                erro(request, 'Formato de arquivo não suportado, apenas .pdf ou .txt')
+            
+            arquivo.extrairConteudoArquivo() 
+            emailTexto = Email(arquivo.arquivo, "")
         else:
-            messages.error(request, 'Envie o email por texto ou por arquivo')
-            return redirect('pegaremail')
+            erro(request, 'Envie o email por texto ou por arquivo')
         
-        textoPrePro = preprocessar(conteudo) # PREPROCESSAR O TEXTO (SENDO TEXTO OU PDF/TXT)
+        emailTexto.preprocessar()
 
-        textoResposta  = classificarEmail(textoPrePro)
-        print(textoResposta)
-        dados = separaTexto(textoResposta)
-
+        try:
+            dados = emailTexto.responderEmail()
+        except RateLimitError:
+            erro(request, 'Limite de requisições atingido. Tente novamente mais tarde.')
+        except Exception as e:
+            erro(request, 'Ocorreu um erro inesperado: {e}.')
+            
         return render(request, 'main/index.html', dados)
     return render(request, 'main/index.html')
 
-
-def separaTexto(texto_resposta):
-    categoria = None
-    resposta = None
-
-    # Captura a categoria
-    match_categoria = re.search(r"Classificação:\s*\*\*(.*?)\*\*", texto_resposta)
-    if match_categoria:
-        categoria = match_categoria.group(1).strip()
-
-    # Captura a resposta automática
-    match_resposta = re.search(r"Resposta automática:\s*\"(.*)\"", texto_resposta, re.DOTALL)
-    if match_resposta:
-        resposta = match_resposta.group(1).strip()
-
-    return {
-            "categoria": categoria,
-            "resposta": resposta
-            }
-
-
-def classificarEmail(email_texto):
-    prompt = f"""
-    Analise o seguinte email e:
-    1. Classifique como 'Produtivo' ou 'Improdutivo'.
-    2. Gere uma resposta automática curta e adequada.
-
-    Email: {email_texto}
-    Sempre retorne no formato:
-    'Classificação: **[Produtivo/Improdutivo]**
-    Resposta automática: "[resposta gerada]"'
-    """
-    
-    resposta = openai.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "user", "content": prompt}]
-    )
-    
-    return resposta.choices[0].message.content
-
-
-
-def classificar_email(email):
-    resposta = openai.chat.completions.create(
-        model="ft:gpt-4o-mini-turbo-xxxxx",  # seu modelo fine-tunado
-        messages=[{"role": "user", "content": f"Email: {email}\nClassifique e responda:"}]
-    )
-    return resposta.choices[0].message.content
-
-print(classificar_email("Oi, preciso de ajuda para acessar o sistema."))
+def erro(request, texto):
+    messages.error(request, texto)
+    return redirect('home')

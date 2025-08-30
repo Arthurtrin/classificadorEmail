@@ -2,6 +2,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.pegaremail, name='pegaremail'),
+    path('', views.home, name='home'),
 
 ]

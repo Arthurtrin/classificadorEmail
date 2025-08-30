@@ -70,7 +70,7 @@
     <div class="form-section mb-4">
       <h5 class="mb-3"><i class="fa-solid fa-upload"></i> Envie seu email</h5>
 
-      <form method="post" action="{% url 'pegaremail' %}" enctype="multipart/form-data">
+      <form method="post" action="{% url 'home' %}" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="mb-3">
           <label for="emailText" class="form-label">Digite ou cole o email:</label>
