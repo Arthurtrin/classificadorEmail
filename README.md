@@ -34,7 +34,7 @@ O objetivo é ajudar empresas a ganharem produtividade ao tratar comunicações 
 
 ## 🌐 Acesse o Projeto Online
 
-🔗 Deploy: [https://classificador-email-0knh.onrender.com/](https://classificador-email-0knh.onrender.com/)
+🔗 Deploy: [https://classificadoremail-gz8o.onrender.com/](https://classificadoremail-gz8o.onrender.com/)
 
 ---
 
