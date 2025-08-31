@@ -78,7 +78,7 @@ pip install -r requirements.txt
 
 OPENAI_API_KEY=sua_chave_api_openai
 DEBUG=True
-SECRET_KEY=chave_django
+SECRET_KEY=django-insecure-e2%-b-s^n72_+ir1a%+clia*2(dmui^mt!bd_26g8i#qmm(tk%
 
 ```
 
